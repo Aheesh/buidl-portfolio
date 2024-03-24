@@ -4,35 +4,30 @@ import Image from "next/image";
 import { ApproveERC20 } from "@/components/approveERC20";
 import { BuyPlayerBWinToken } from "@/components/buyPlayerBWinToken";
 
-import { FrameMetadata } from "@coinbase/onchainkit";
+import { getFrameMetadata } from "@coinbase/onchainkit";
+import type { Metadata } from "next";
+import PlayerBPage from "@/pages/playerB";
+import { get } from "http";
+
+const frameMetadata = getFrameMetadata({
+  buttons: [
+    {
+      label: "We love BOAT",
+    },
+  ],
+  image: "https://build-onchain-apps.vercel.app/release/v-0-17.png",
+  postUrl: "https://build-onchain-apps.vercel.app/api/frame",
+});
+
+export const metadata: Metadata = {
+  manifest: "/manifest.json",
+  other: {},
+};
 
 export default function SwapPageB() {
   return (
     <main>
-      <FrameMetadata
-        buttons={[
-          {
-            label: "Tell me the story",
-          },
-          {
-            action: "link",
-            label: "Link to Google",
-            target: "https://www.google.com",
-          },
-          {
-            action: "post_redirect",
-            label: "Redirect to cute pictures",
-          },
-        ]}
-        image={{
-          src: "https://zizzamia.xyz/park-3.png",
-          aspectRatio: "1:1",
-        }}
-        input={{
-          text: "Tell me a boat story",
-        }}
-        postUrl="https://zizzamia.xyz/api/frame"
-      />
+      <PlayerBPage />
       <Image
         alt="background-image"
         src="/Banner.svg"
