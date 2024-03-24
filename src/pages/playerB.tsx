@@ -9,13 +9,6 @@ import { FrameMetadata } from "@coinbase/onchainkit";
 export default function SwapPageB() {
   return (
     <main>
-      <Image
-        alt="background-image"
-        src="/Banner.svg"
-        height="380"
-        width="2000"
-        className="fixed z-[-1] top-0 left-0 object-cover md:h-96 min-h-48 w-full"
-      />
       <FrameMetadata
         buttons={[
           {
@@ -39,6 +32,13 @@ export default function SwapPageB() {
           text: "Tell me a boat story",
         }}
         postUrl="https://zizzamia.xyz/api/frame"
+      />
+      <Image
+        alt="background-image"
+        src="/Banner.svg"
+        height="380"
+        width="2000"
+        className="fixed z-[-1] top-0 left-0 object-cover md:h-96 min-h-48 w-full"
       />
 
       <div className="fixed top-3 right-3 z-10">
