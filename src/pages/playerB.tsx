@@ -4,30 +4,29 @@ import Image from "next/image";
 import { ApproveERC20 } from "@/components/approveERC20";
 import { BuyPlayerBWinToken } from "@/components/buyPlayerBWinToken";
 
-import { getFrameMetadata } from "@coinbase/onchainkit";
-import type { Metadata } from "next";
-import PlayerBPage from "@/pages/playerB";
+//import { getFrameMetadata } from "@coinbase/onchainkit";
+//import type { Metadata } from "next";
+//import PlayerBPage from "@/pages/playerB";
 import { get } from "http";
 
-const frameMetadata = getFrameMetadata({
-  buttons: [
-    {
-      label: "We love BOAT",
-    },
-  ],
-  image: "https://build-onchain-apps.vercel.app/release/v-0-17.png",
-  postUrl: "https://build-onchain-apps.vercel.app/api/frame",
-});
+// const frameMetadata = getFrameMetadata({
+//   buttons: [
+//     {
+//       label: "We love BOAT",
+//     },
+//   ],
+//   image: "https://build-onchain-apps.vercel.app/release/v-0-17.png",
+//   postUrl: "https://build-onchain-apps.vercel.app/api/frame",
+// });
 
-export const metadata: Metadata = {
-  manifest: "/manifest.json",
-  other: {},
-};
+// export const metadata: Metadata = {
+//   manifest: "/manifest.json",
+//   other: {},
+// };
 
 export default function SwapPageB() {
   return (
     <main>
-      <PlayerBPage />
       <Image
         alt="background-image"
         src="/Banner.svg"
